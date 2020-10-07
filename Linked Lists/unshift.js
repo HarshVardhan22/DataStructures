@@ -1,5 +1,5 @@
-//add at end
-class Node {
+//add at the begining
+class Node{
     constructor(val){
         this.value = val;
         this.next = null;
@@ -13,25 +13,19 @@ class LinkedList {
     this.length = 0;
   }
 
-  push(val) {
+  unshift(val) {
+    if (this.head === null) return undefined;
     let newNode = new Node(val);
-    if (this.head === null) {
-      this.head = newNode;
-      this.tail = this.head;
-    } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
-    }
+    let temp = this.head;
+    newNode.next = temp;
+    this.head = newNode;
     this.length++;
-    return this;
   }
-
 }
 
-var list =new LinkedList;
+var list = new LinkedList;
 
 /* Testing Code
-
 list.push(1);
 list.push(2);
 list.push(3);
@@ -41,6 +35,8 @@ list.push(6);
 
 console.log(list);
 
+list.unshift(94);
+
+console.log(list);
+
 */
-
-
