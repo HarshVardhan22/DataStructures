@@ -17,25 +17,25 @@ class LinkedList {
   }
 
   reverse(){
-      let temp = this.tail;
-      let hook = this.head;
-      let reverseLoop = 0
-      let forwardLoop = this.length;
-      while(reverseLoop!==this.length){
-      while(forwardLoop+1+reverseLoop>1){
-          hook = hook.next;
-          forwardLoop--;
+      let temp = this.head;
+      let jack = this.head;
+      while(temp.next!==null)
+        temp = temp.next;
+      let head = temp;
+      let end  = 1;
+      while(end<this.length){
+        while(jack.next.next!==null)
+          jack = jack.next;
+        jack.next = null;
+        temp.next = jack;
+        temp = jack;
+        jack = this.head;
+        end++;
       }
-      temp.next = hook;
-      hook = this.head;
-      reverseLoop++;
+      this.head = head;
+      this.tail = temp;
+    
     }
-
-
-  }
-
-
-
 
   push(val) {
     let newNode = new Node(val);
@@ -49,19 +49,30 @@ class LinkedList {
     this.length++;
     return this;
   }
+
+   get(index) {
+    if (this.head === null) return undefined;
+    let temp = this.head;
+    let count = 0;
+    //4rth item means 3 next : head.next.next.next = 4rth item or 3rd index item
+    while (count < index) {
+      temp = temp.next;
+      count++;
+    }
+    return temp.value;
+  }
 }
 
 var list = new LinkedList();
 
  //Testing Code
+// list.push(0);
+// list.push(1);
+// list.push(2);
+// list.push(3);
+// console.log(list);
+// list.reverse();
 
-list.push(1);
-list.push(2);
-list.push(3);
-list.push(4);
-list.push(5);
-list.push(6);
 
-console.log(list);
 
 
