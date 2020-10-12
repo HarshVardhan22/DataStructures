@@ -42,14 +42,9 @@ class LinkedList {
 
 var list = new LinkedList();
 
-list.push(1);
-list.push(2);
-list.push(3);
-list.push(4);
-list.push(5);
-list.push(6);
-
-console.log(list);
+for(let i =0 ; i<100; i++)
+list.push(i);
 
 console.log(list.get(3));
+
 
