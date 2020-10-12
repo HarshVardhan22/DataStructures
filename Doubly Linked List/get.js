@@ -22,7 +22,7 @@ class DoublyLL{
             return null;
         if(index<=Math.floor(this.length/2)){
             let temp =this.head;
-            while(index>1){
+            while(index>=1){
                 temp = temp.next;
                 index--;
             }
