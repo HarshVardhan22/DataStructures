@@ -27,6 +27,7 @@ class DoublyLL{
             newNode.prev = this.tail;
             this.tail = newNode; 
         }
+        this.length++;
 
     } 
 }
