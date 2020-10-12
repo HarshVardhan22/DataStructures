@@ -31,9 +31,9 @@ class DoublyLL{
 
         else{
             let temp =this.tail;
-            while(index>1){
+            while(this.length-index>1){
                 temp = temp.prev;
-                index--;
+                index++;
             }
             return temp.val;
         }
@@ -58,9 +58,8 @@ class DoublyLL{
 }
 
 let list = new DoublyLL;
-for(let i= 0; i<5;i++)
+for(let i= 0; i<100;i++)
 list.push(i);
 
-console.log(list);
 
-console.log(list.get(3));
+console.log(list.get(99));
